@@ -3,7 +3,7 @@ function title() {
 		url : ('/cardentries.json'),
 		success : function(result){
 			var element = document.getElementById("heading");
-			element.innerHTML = result.name + " Bingo Card Generator";
+			element.innerHTML = result.name;
 			var freeSpace = document.getElementById("freeSpace");
 			freeSpace.checked = result.freeSpace;
 			if(result.imageURL != "") {
@@ -29,8 +29,8 @@ function generate() {
 			var freeSpace = document.getElementById("freeSpace");
 			for(var i = 1; i <= 25; i++) {
 				var element = document.getElementById(i.toString());
-				if(i == 13 && freeSpace.checked == true) {
-					element.innerHTML = result.freespaceTest;
+				if(i == 13 ) {
+					element.innerHTML = "<B>" + result.freespaceTest + "</B>";
 				}
 				else{
 					var chosen = true;
